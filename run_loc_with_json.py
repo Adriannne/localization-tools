@@ -26,7 +26,8 @@ def start_run():
     run_localization('multi', 'ekf')
     # run_localization('single', 'ekf')
     # run_localization('single', 'ba')
-    run_localization('multi', 'ba')
+    # run_localization('multi', 'ba')
+
 
 def getArgs():
     '''
@@ -41,14 +42,19 @@ def getArgs():
             usage()
         elif name_ in ("-c", "--codepath"):
             code_path = value_
+            print(code_path)
         elif name_ in ("-r", "--resultpath"):
             result_path = value_
+            print(result_path)
         elif name_ in ("-j", "--jsonpath"):
             json_path = value_
+            print(json_path)
         else:
+            print("error! cannot find this option: " + name_)
             usage()
 
     return code_path, result_path, json_path
+
 
 def usage():
     '''
@@ -57,8 +63,9 @@ def usage():
     info = '''
     python run_loc_with_json.py -c <codepath> -r <resultpath> -j <jsonpath>
     '''
-    print (info)
+    print(info)
     exit()
+
 
 def run_localization(thread, algo):
     '''
@@ -188,7 +195,7 @@ def generate_multiloc_cmd(exe_file, camera_config, db_type, db_dir, result_path,
           '--syscfg' + ' ' + sys_config + ' ' + \
           '--modcfg' + ' ' + mod_config + ' ' + \
           '--imucfg' + ' ' + imu_config + ' ' + \
-          '--camcfg' + ' ' + camera_config + ' ' + \
+          '--calib' + ' ' + camera_config + ' ' + \
           '--drcfg' + ' ' + datareceiver_config + ' ' + \
           '--dbtype' + ' ' + db_type + ' ' + \
           '--database' + ' ' + db_dir + ' ' + \
@@ -198,7 +205,7 @@ def generate_multiloc_cmd(exe_file, camera_config, db_type, db_dir, result_path,
           '--ologpath' + ' ' + result_path + '/log.txt' + ' ' + \
           '--output' + ' ' + result_path + ' ' + \
           '--testname' + ' ' + os.path.split(image_path)[1] + ' ' + \
-          '--locmode 1 >/dev/null 2>&1'
+          '--visualip 10.69.140.179 --locmode 1 >/dev/null 2>&1'
     logging.info("localization command: {}".format(cmd))
     return cmd
 
@@ -209,7 +216,7 @@ def recording_top_msg(result_path):
     '''
     logging.info("recording top msg of abox")
     os.system("ps -ef | grep top | grep -v grep | awk '{print $2}'|xargs sudo kill -9")
-    os.system('top -b -d 5 |grep -E "Tasks|%Cpu|KiB" > {}/topinfo.log &'.format(result_path))
+    os.system('top -b -d 5 |grep -E "Tasks|%Cpu|KiB |RES|MultiThreadsLoc" > {}/topinfo.log &'.format(result_path))
 
 
 def stop_recording_top_msg():

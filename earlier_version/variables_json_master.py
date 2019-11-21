@@ -1,15 +1,16 @@
 #user setting
-CODE_DIR='/home/roaddb/others/shiyu/temp_test/code_branch'
-LOC_RESULT_DIR = '/home/roaddb/others/shiyu/temp_test/test_result'
-LIST_JSON_PATH = '/home/roaddb/others/shiyu/temp_test/temp_list.json'
-RTV_SAVE_DIR = '/opt/ygomi/roadDB/rtv_dst'
+#CODE_DIR='/home/roaddb/others/shiyu/code_master'
+CODE_DIR='/home/roaddb/others/shiyu/code_release'
+LOC_RESULT_DIR = '/home/roaddb/others/shiyu/testresult'
+LIST_JSON_PATH = '/home/roaddb/others/shiyu/193_script/rtv_img_list.json'
+RTV_SAVE_DIR = '/home/roaddb/others/shiyu/RDB-39490/test_mode2'
 
 
 #variales of machine
-VISULIZATION_IP = '10.69.140.190'
-ALGORITHM_IP = '10.69.140.193'
-ALGORITHM_MAC = 'd0:4c:c1:02:4e:2a'
-ALGORITHM_PORT = 'p20p1'
+VISULIZATION_IP = '10.69.141.31'
+ALGORITHM_IP = '10.69.140.220'
+ALGORITHM_MAC = 'd0:4c:c1:02:4e:10'
+ALGORITHM_PORT = 'eth6'
 ALGORITHM_USER_NAME = 'roaddb'
 ALGORITHM_PASSWORD = 'Test1234'
 

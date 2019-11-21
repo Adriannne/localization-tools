@@ -21,34 +21,10 @@ if [ ${compile_all} -eq 1 ]; then
        echo -e "\nbuild global common failed!\n"
        exit 1
     fi
-    echo -e "\n--------------------build core common-------------------------!\n"
-    cd "$rootDir"/core/common/ && ./build.sh -r
+    echo -e "\n--------------------build rdb-device-common-------------------------!\n"
+    cd "$rootDir"/framework/device/rdb-device-common/ && ./build.sh -r
     if [ $? -ne 0 ];then 
-       echo -e "\nbuild core common failed!\n"
-       exit 1
-    fi
-    echo -e "\n--------------------build gmock-------------------------!\n"
-    cd "$rootDir"/framework/device/gmock/ && ./build.sh -r
-    if [ $? -ne 0 ];then 
-       echo -e "\nbuild gmock failed!\n"
-       exit 1
-    fi
-    echo -e "\n--------------------build roaddb_logger-------------------------!\n"
-    cd "$rootDir"/framework/device/roaddb_logger/ && ./build.sh -r
-    if [ $? -ne 0 ];then 
-       echo -e "\nbuild roaddb_logger failed!\n"
-       exit 1
-    fi
-    echo -e "\n--------------------build rdb-vehicle-sensor-data-parser-------------------------!\n"
-    cd "$rootDir"/framework/device/rdb-vehicle-sensor-data-parser/ && ./build.sh -r
-    if [ $? -ne 0 ];then
-       echo -e "\nbuild rdb-vehicle-sensor-data-parser failed!\n"
-       exit 1
-    fi
-    echo -e "\n--------------------build roaddb_video-------------------------!\n"
-    cd "$rootDir"/framework/device/roaddb_video/ && ./build.sh -r
-    if [ $? -ne 0 ];then 
-       echo -e "\nbuild roaddb_video failed!\n"
+       echo -e "\nbuild rdb-device-common failed!\n"
        exit 1
     fi
     echo -e "\n-----------------build road_in_vehicle_common_api----------------------!\n"

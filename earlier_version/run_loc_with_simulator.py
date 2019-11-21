@@ -26,9 +26,9 @@ def start_run():
     modify_sys_config(variables.SYS_CONFIG, variables.VISULIZATION_IP, variables.ALGORITHM_PORT, variables.RTV_SAVE_DIR)
 
     run_localization('multi', 'ekf')
-    run_localization('multi', 'ba')
-#    run_localization('single', 'ekf')
+    run_localization('single', 'ekf')
     run_localization('single', 'ba')
+    run_localization('multi', 'ba')
 
 
 def run_localization(thread, algo):
@@ -289,7 +289,7 @@ def recording_top_msg(result_path):
     @param: result_path: localization result path
     '''
     logging.info("recording top msg of abox")
-    os.system('top -b -d 30 |grep -E "Tasks|%Cpu|KiB" > {}/topinfo.log &'.format(result_path))
+    os.system('top -b -d 5 |grep -E "Tasks|%Cpu|KiB" > {}/topinfo.log &'.format(result_path))
 
 
 def stop_recording_top_msg():

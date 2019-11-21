@@ -1,0 +1,75 @@
+2019-11-11 15:07:20,705 - root - INFO - case: 20191111144607_multi_ekf_honda_2019-09-11_T_23-59-46.484_UTC.img_branch1
+2019-11-11 15:07:20,816 - root - INFO - the length of two kml. optimizePose kml: 53865, reportPose kml: 53865
+2019-11-11 15:07:21,514 - root - WARNING - the distance more than 3:
+2019-11-11 15:07:21,514 - root - WARNING - index:4376, distance:0.232697, poseReport:-122.0144176278116,37.3532414816173,35.61800003051758, optimizePos:-122.0144142466866,37.35324212238817,35.8506965637207
+2019-11-11 15:07:21,518 - root - INFO - total frames: 53865
+2019-11-11 15:07:21,518 - root - INFO - max_distance: 0.23269653322857145
+2019-11-11 15:07:21,518 - root - INFO - ave_distance: 0.0011843564473825072
+2019-11-11 15:07:21,518 - root - INFO - variance: 4.6543846193765215e-06
+2019-11-11 15:11:16,659 - root - INFO - case: 20191111144607_multi_ekf_honda_2019-09-11_T_23-59-46.484_UTC.img_branch1
+2019-11-11 15:11:16,744 - root - INFO - the length of two kml. optimizePose kml: 53865, reportPose kml: 53865
+2019-11-11 15:11:17,418 - root - WARNING - the distance more than 3:
+2019-11-11 15:11:17,418 - root - WARNING - index:4375, distance:0.231907, poseReport:-122.0144176457231,37.35324149940455,35.61878967285156, optimizePos:-122.0144176223004,37.35324148062052,35.617919921875
+2019-11-11 15:11:17,419 - root - WARNING - index:4376, distance:0.302025, poseReport:-122.0144176278116,37.3532414816173,35.61800003051758, optimizePos:-122.0144142466866,37.35324212238817,35.8506965637207
+2019-11-11 15:11:17,423 - root - INFO - total frames: 53864
+2019-11-11 15:11:17,423 - root - INFO - max_distance: 0.30202484133621044
+2019-11-11 15:11:17,423 - root - INFO - ave_distance: 0.002695845739651601
+2019-11-11 15:11:17,424 - root - INFO - variance: 1.7584207174068207e-05
+2019-11-11 15:11:28,373 - root - INFO - case: 20191111144607_multi_ekf_honda_2019-09-11_T_23-59-46.484_UTC.img_branch1
+2019-11-11 15:11:28,459 - root - INFO - the length of two kml. optimizePose kml: 53865, reportPose kml: 53865
+2019-11-11 15:11:29,184 - root - WARNING - the distance more than 3:
+2019-11-11 15:11:29,184 - root - WARNING - index:4374, distance:0.237461, poseReport:-122.0144177111686,37.35324144602559,35.61323547363281, optimizePos:-122.0144176546788,37.35324150553986,35.61861038208008
+2019-11-11 15:11:29,184 - root - WARNING - index:4375, distance:0.301235, poseReport:-122.0144176457231,37.35324149940455,35.61878967285156, optimizePos:-122.0144176223004,37.35324148062052,35.617919921875
+2019-11-11 15:11:29,184 - root - WARNING - index:4376, distance:0.242680, poseReport:-122.0144176278116,37.3532414816173,35.61800003051758, optimizePos:-122.0144142466866,37.35324212238817,35.8506965637207
+2019-11-11 15:11:29,188 - root - INFO - total frames: 53863
+2019-11-11 15:11:29,188 - root - INFO - max_distance: 0.3012351990025041
+2019-11-11 15:11:29,189 - root - INFO - ave_distance: 0.0044576415282437535
+2019-11-11 15:11:29,189 - root - INFO - variance: 4.661876758947429e-05
+2019-11-11 15:11:57,475 - root - INFO - case: 20191111144607_multi_ekf_honda_2019-09-11_T_23-59-46.484_UTC.img_branch1
+2019-11-11 15:11:57,559 - root - INFO - the length of two kml. optimizePose kml: 53865, reportPose kml: 53865
+2019-11-11 15:12:15,670 - root - INFO - case: 20191111144607_multi_ekf_honda_2019-09-11_T_23-59-46.484_UTC.img_branch1
+2019-11-11 15:12:15,756 - root - INFO - the length of two kml. optimizePose kml: 53865, reportPose kml: 53865
+2019-11-11 15:12:16,448 - root - INFO - total frames: 53864
+2019-11-11 15:12:16,449 - root - INFO - max_distance: 0.06470871006361748
+2019-11-11 15:12:16,449 - root - INFO - ave_distance: 0.0016848230855795471
+2019-11-11 15:12:16,449 - root - INFO - variance: 8.48806065982835e-06
+2019-11-11 15:19:53,094 - root - INFO - case: 20191111144607_multi_ekf_honda_2019-09-11_T_23-29-46.484_UTC.img_branch1
+2019-11-11 15:19:53,207 - root - INFO - the length of two kml. optimizePose kml: 53062, reportPose kml: 53062
+2019-11-11 15:19:53,859 - root - INFO - total frames: 53061
+2019-11-11 15:19:53,859 - root - INFO - max_distance: 0.0429992676325016
+2019-11-11 15:19:53,859 - root - INFO - ave_distance: 0.0018247505111073981
+2019-11-11 15:19:53,859 - root - INFO - variance: 1.0528225509036581e-05
+2019-11-11 15:20:28,142 - root - INFO - case: 20191111144607_multi_ekf_honda_2019-09-11_T_23-29-46.484_UTC.img_branch1
+2019-11-11 15:20:28,227 - root - INFO - the length of two kml. optimizePose kml: 53062, reportPose kml: 53062
+2019-11-11 15:20:28,903 - root - WARNING - the distance more than 3:
+2019-11-11 15:20:28,903 - root - WARNING - index:0, distance:0.486004, poseReport:-122.0516495200655,37.39088198573347,21.37135314941406, optimizePos:-122.051649886721,37.3908785315535,20.88534927368164
+2019-11-11 15:20:28,907 - root - INFO - total frames: 53062
+2019-11-11 15:20:28,907 - root - INFO - max_distance: 0.4860038757448316
+2019-11-11 15:20:28,908 - root - INFO - ave_distance: 0.0012719227071676137
+2019-11-11 15:20:28,908 - root - INFO - variance: 1.022048365252929e-05
+2019-11-11 15:20:41,383 - root - INFO - case: 20191111144607_multi_ekf_honda_2019-09-11_T_23-29-46.484_UTC.img_branch1
+2019-11-11 15:20:41,469 - root - INFO - the length of two kml. optimizePose kml: 53062, reportPose kml: 53062
+2019-11-11 15:20:42,138 - root - WARNING - the distance more than 3:
+2019-11-11 15:20:42,138 - root - WARNING - index:0, distance:0.537302, poseReport:-122.0516495200655,37.39088198573347,21.37135314941406, optimizePos:-122.051649886721,37.3908785315535,20.88534927368164
+2019-11-11 15:20:42,138 - root - WARNING - index:2, distance:0.256565, poseReport:-122.0516457315209,37.3908772471661,20.83382225036621, optimizePos:-122.0516486964688,37.39087385952899,20.73406410217285
+2019-11-11 15:20:42,138 - root - WARNING - index:3, distance:0.213724, poseReport:-122.0516464048715,37.39087507654862,20.73348999023438, optimizePos:-122.0516489707713,37.39087259108988,20.57725715637207
+2019-11-11 15:20:42,142 - root - INFO - total frames: 53061
+2019-11-11 15:20:42,142 - root - INFO - max_distance: 0.5373020172484152
+2019-11-11 15:20:42,142 - root - INFO - ave_distance: 0.0029007489699297614
+2019-11-11 15:20:42,142 - root - INFO - variance: 2.889667753943676e-05
+2019-11-11 16:16:16,736 - root - INFO - case: 20191111144607_multi_ekf_honda_2019-09-11_T_23-29-46.484_UTC.img_branch1
+2019-11-11 16:16:16,845 - root - INFO - the length of two kml. optimizePose kml: 53062, reportPose kml: 53062
+2019-11-11 16:17:55,137 - root - INFO - case: 20191111144607_multi_ekf_honda_2019-09-11_T_23-29-46.484_UTC.img_branch1
+2019-11-11 16:17:55,235 - root - INFO - the length of two kml. optimizePose kml: 53062, reportPose kml: 53062
+2019-11-11 16:20:17,667 - root - INFO - case: 20191111144607_multi_ekf_honda_2019-09-11_T_23-29-46.484_UTC.img_branch1
+2019-11-11 16:20:17,766 - root - INFO - the length of two kml. optimizePose kml: 53062, reportPose kml: 53062
+2019-11-11 16:38:38,913 - root - INFO - case: 20191111162833_multi_ekf_honda_2019-09-11_T_23-59-46.484_UTC.img_branch1
+2019-11-11 16:38:39,017 - root - INFO - the length of two kml. optimizePose kml: 53865, reportPose kml: 53865
+2019-11-11 16:38:41,329 - root - INFO - case: 20191111162837_multi_ekf_honda_2019-09-11_T_22-30-29.443_UTC.img_branch1
+2019-11-11 16:38:41,426 - root - INFO - the length of two kml. optimizePose kml: 51287, reportPose kml: 51287
+2019-11-11 16:38:43,587 - root - INFO - case: 20191111162840_multi_ekf_honda_2019-09-05_T_18-24-04.387_UTC.img_branch1
+2019-11-11 16:38:43,689 - root - INFO - the length of two kml. optimizePose kml: 53761, reportPose kml: 53761
+2019-11-11 16:38:45,962 - root - INFO - case: 20191111162844_multi_ekf_honda_2019-09-11_T_23-29-46.484_UTC.img_branch1
+2019-11-11 16:38:46,062 - root - INFO - the length of two kml. optimizePose kml: 53062, reportPose kml: 53062
+2019-11-11 16:38:48,288 - root - INFO - case: 20191111162847_multi_ekf_honda_2019-09-11_T_22-00-29.443_UTC.img_branch1
+2019-11-11 16:38:48,397 - root - INFO - the length of two kml. optimizePose kml: 53686, reportPose kml: 53686

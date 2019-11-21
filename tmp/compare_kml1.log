@@ -1,0 +1,6 @@
+2019-11-11 14:47:07,730 - root - INFO - case: 20191111144607_multi_ekf_honda_2019-09-11_T_23-59-46.484_UTC.img_branch1
+2019-11-11 14:47:07,835 - root - INFO - the length of two kml is different. pose kml: 53867, posreport kml: 53866
+2019-11-11 14:47:08,462 - root - INFO - total frames: 53866
+2019-11-11 14:47:08,463 - root - INFO - max_distance: 0.2327000000257202
+2019-11-11 14:47:08,463 - root - INFO - ave_distance: 0.0011843471526595017
+2019-11-11 14:47:08,463 - root - INFO - variance: 4.65616791471837e-06

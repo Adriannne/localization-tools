@@ -1,4 +1,5 @@
 branch=master
+branch1=feature/RDB-45529-integrate-new-dr-code-to-master-branch
 
 thirdPartyBranch=$branch
 globalCommonBranch=$branch
@@ -10,7 +11,7 @@ vehicleCommonApiBranch=$branch
 dataReceiverBranch=$branch
 
 algoCommonBranch=$branch
-algoVehicleLocBranch=$branch
+algoVehicleLocBranch=$branch1
 
 locVisualBranch=$branch
 debugToolsBranch=$branch
@@ -19,7 +20,7 @@ new_repo=1 #Use repo to clone the whole code
 compile_all=1 #Compile all the code except the algorithm_localization 
 
 taskspace=/home/user/localization
-taskspace_code=${taskspace}/code_master
+taskspace_code=${taskspace}/code_45529
 
 #===================================================#
 #Do not modify the content below
@@ -41,9 +42,9 @@ if [ ${new_repo} -eq 1 ]; then
     git clone ssh://git@stash.ygomi.com:7999/as/common
     mkdir core
     cd ${taskspace_code}/core
-    git clone ssh://git@stash.ygomi.com:7999/rdbcore/common.git
     git clone ssh://git@stash.ygomi.com:7999/rdbcore/algorithm_common.git
     git clone ssh://git@stash.ygomi.com:7999/rdbcore/algorithm_vehicle_localization.git
+    git clone ssh://git@stash.ygomi.com:7999/rdbcore/rdb-loc-visualization.git
     cd ${taskspace_code}
     mkdir -p ${taskspace_code}/framework/device
     cd ${taskspace_code}/framework/device
@@ -52,7 +53,6 @@ if [ ${new_repo} -eq 1 ]; then
     git clone ssh://git@stash.ygomi.com:7999/as/road_in_vehicle_common_api
     git clone ssh://git@stash.ygomi.com:7999/as/data-receiver.git
     git clone ssh://git@stash.ygomi.com:7999/as/rdb-tools-debug-tools.git
-    git clone ssh://git@stash.ygomi.com:7999/as/rdb-loc-visualization.git
 fi
 
 if [ ${compile_all} -eq 1 ]; then
@@ -69,12 +69,6 @@ if [ ${compile_all} -eq 1 ]; then
     cd "$rootDir"/common/ && git fetch --all && git reset --hard && git checkout $globalCommonBranch && git pull  
     if [ $? -ne 0 ];then 
        echo -e "\ncheckout global common failed!\n"
-       exit 1
-    fi
-    echo -e "\n--------------------checkout core common-------------------------!\n"
-    cd "$rootDir"/core/common/ && git fetch --all && git reset --hard && git checkout $coreCommonBranch && git pull  
-    if [ $? -ne 0 ];then 
-       echo -e "\ncheckout core common failed!\n"
        exit 1
     fi
        
@@ -116,7 +110,7 @@ if [ ${compile_all} -eq 1 ]; then
        exit 1
     fi
     echo -e "\n------------------checkout rdb-loc-visualization------------------!\n"
-    cd "$rootDir"/framework/device/rdb-loc-visualization/ && git fetch --all && git reset --hard &&  git checkout $locVisualBranch && git pull
+    cd "$rootDir"/core/rdb-loc-visualization/ && git fetch --all && git reset --hard &&  git checkout $locVisualBranch && git pull
     if [ $? -ne 0 ];then 
        echo -e "\ncheckout rdb-loc-visualization failed!\n"
        exit 1
