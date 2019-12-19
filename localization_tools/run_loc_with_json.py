@@ -84,6 +84,7 @@ def run_localization(thread, algo):
             area, camera_config, db_path, db_type, case_list = read_json_data(area_json_path, cases)
             print(area, camera_config, db_path, db_type, case_list)
             for image_path in case_list:
+                check_rtv_undistort(image_path)
                 result_path = create_result_path(total_result_path, thread, algo, area, image_path)
                 recording_top_msg(result_path)
                 start_loc(image_path, camera_config, db_type, db_path, result_path, thread, algo, code_path)
@@ -129,6 +130,21 @@ def get_json_item_path(parent_path, path):
         return path
     else:
         return parent_path + os.sep + path
+
+
+def check_rtv_undistort(rtv_path):
+    bin_file = '/opt/ygomi/roadDB/bin/rtv_detail_info'
+    if os.path.isfile(bin_file):
+        p = subprocess.Popen('{} --irtvpath {}'.format(bin_file, rtv_path), shell=True, stdout=subprocess.PIPE)
+        ret = p.stdout.readlines()
+        dic = json.loads(ret[0].decode())
+        if dic['exit_code'] == 0:
+            logging.info('undistort_flag: {}'.format(dic['rtv_info']['undistort_flag']))
+            logging.info('rtv_frames_total: {}'.format(dic['rtv_info']['rtv_frames_total']))
+        else:
+            logging.warning('rtv_detail_info failed to get rtv info!')
+    else:
+        logging.warning('rtv_detail_info does not exist!')
 
 
 def create_result_path(total_path, thread, algo, area, image_path):
