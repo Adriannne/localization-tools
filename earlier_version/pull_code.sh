@@ -1,14 +1,14 @@
 branch=master
-branch1=feature/RDB-46282-integrate-coordinate-main
+branch1=feature/RDB-46939-display-thumbnail-map-upon-3d-view-overlay
 
-3rdpartyBranch=$branch
+thirdpartyBranch=$branch
 commonBranch=$branch
-rdb-device-commonBranch=$branch
-road_in_vehicle_common_apiBranch=$branch
-algorithm_commonBranch=$branch
-data-receiverBranch=$branch
-algorithm_vehicle_localizationBranch=$branch
-rdb-loc-visualizationBranch=$branch
+rdbDeviceCommonBranch=$branch
+roadInVehicleCommonApiBranch=$branch
+algorithmCommonBranch=$branch
+dataReceiverBranch=$branch
+localizationBranch=$branch
+visualizationBranch=$branch1
 
 new_repo=1
 compile_all=1
@@ -43,7 +43,7 @@ if [ ${compile_all} -eq 1 ]; then
     rootDir=${code_dir}
 
     echo -e "\n-------------------------checkout 3rdparty-------------------------!\n"
-    cd "$rootDir"/3rdparty && git fetch --all && git reset --hard && git checkout $3rdpartyBranch && git pull
+    cd "$rootDir"/3rdparty && git fetch --all && git reset --hard && git checkout $thirdpartyBranch && git pull
     if [ $? -ne 0 ];then
         echo -e "\ncheckout 3rdparty failed!\n"
         exit 1
@@ -57,42 +57,42 @@ if [ ${compile_all} -eq 1 ]; then
     fi
 
     echo -e "\n-------------------------checkout rdb-device-common-------------------------!\n"
-    cd "$rootDir"/framework/device/rdb-device-common && git fetch --all && git reset --hard && git checkout $rdb-device-commonBranch && git pull
+    cd "$rootDir"/framework/device/rdb-device-common && git fetch --all && git reset --hard && git checkout $rdbDeviceCommonBranch && git pull
     if [ $? -ne 0 ];then
         echo -e "\ncheckout rdb-device-common failed!\n"
         exit 1
     fi
 
     echo -e "\n-------------------------checkout road_in_vehicle_common_api-------------------------!\n"
-    cd "$rootDir"/framework/device/road_in_vehicle_common_api && git fetch --all && git reset --hard && git checkout $road_in_vehicle_common_apiBranch && git pull
+    cd "$rootDir"/framework/device/road_in_vehicle_common_api && git fetch --all && git reset --hard && git checkout $roadInVehicleCommonApiBranch && git pull
     if [ $? -ne 0 ];then
         echo -e "\ncheckout road_in_vehicle_common_api failed!\n"
         exit 1
     fi
 
     echo -e "\n-------------------------checkout algorithm_common-------------------------!\n"
-    cd "$rootDir"/core/algorithm_common && git fetch --all && git reset --hard && git checkout $algorithm_commonBranch && git pull
+    cd "$rootDir"/core/algorithm_common && git fetch --all && git reset --hard && git checkout $algorithmCommonBranch && git pull
     if [ $? -ne 0 ];then
         echo -e "\ncheckout algorithm_common failed!\n"
         exit 1
     fi
 
     echo -e "\n-------------------------checkout data-receiver-------------------------!\n"
-    cd "$rootDir"/framework/device/data-receiver && git fetch --all && git reset --hard && git checkout $data-receiverBranch && git pull
+    cd "$rootDir"/framework/device/data-receiver && git fetch --all && git reset --hard && git checkout $dataReceiverBranch && git pull
     if [ $? -ne 0 ];then
         echo -e "\ncheckout data-receiver failed!\n"
         exit 1
     fi
 
     echo -e "\n-------------------------checkout algorithm_vehicle_localization-------------------------!\n"
-    cd "$rootDir"/core/algorithm_vehicle_localization && git fetch --all && git reset --hard && git checkout $algorithm_vehicle_localizationBranch && git pull
+    cd "$rootDir"/core/algorithm_vehicle_localization && git fetch --all && git reset --hard && git checkout $localizationBranch && git pull
     if [ $? -ne 0 ];then
         echo -e "\ncheckout algorithm_vehicle_localization failed!\n"
         exit 1
     fi
 
     echo -e "\n-------------------------checkout rdb-loc-visualization-------------------------!\n"
-    cd "$rootDir"/core/rdb-loc-visualization && git fetch --all && git reset --hard && git checkout $rdb-loc-visualizationBranch && git pull
+    cd "$rootDir"/core/rdb-loc-visualization && git fetch --all && git reset --hard && git checkout $visualizationBranch && git pull
     if [ $? -ne 0 ];then
         echo -e "\ncheckout rdb-loc-visualization failed!\n"
         exit 1

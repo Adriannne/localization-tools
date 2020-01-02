@@ -93,34 +93,42 @@ def generate_pdf_file(html_path):
     pdfkit.from_file(html_path, pdf_path, options=options)
 
 
-def generate_compare_table(table, cases, branch_case_dir, master_case_dir, case_name, output_path):
-    logging.info('draw_compare_memory(\'{}\', \'{}\', \'{}\', \'{}\')'.format(branch_case_dir, master_case_dir,
-                                                                              case_name, output_path))
-    draw_compare_memory(branch_case_dir, master_case_dir, case_name, output_path)
+def generate_compare_table(table, row, cases, branch_case_dir, master_case_dir, case_name, output_path):
+    if os.path.isdir(branch_case_dir) and os.path.isdir(master_case_dir):
+        logging.info('draw_compare_memory(\'{}\', \'{}\', \'{}\', \'{}\')'.format(branch_case_dir, master_case_dir,
+                                                                                  case_name, output_path))
+        draw_compare_memory(branch_case_dir, master_case_dir, case_name, output_path)
 
-    logging.info('draw_pose_kml(\'{}\', \'{}\', \'{}\', \'{}\')'.format(branch_case_dir, master_case_dir, case_name,
-                                                                        output_path))
-    kml_info = draw_pose_kml(branch_case_dir, master_case_dir, case_name, output_path)
+        logging.info('draw_pose_kml(\'{}\', \'{}\', \'{}\', \'{}\')'.format(branch_case_dir, master_case_dir, case_name,
+                                                                            output_path))
+        kml_info = draw_pose_kml(branch_case_dir, master_case_dir, case_name, output_path)
 
-    table.append_data_rows(((
-                                "<strong style='color: #66BAB7'>{}</strong><br /><br />{}".format(cases, kml_info),
-                                "<img src='compare_pose_kml/{}_distance.png' width='500' />".format(case_name),
-                                "<img src='compare_memory/{}_memory.png' width='500' />".format(case_name),
-                            ),))
+        table.append_data_rows(((
+                                    "<strong style='color: #66BAB7'>{}</strong><br /><br />{}".format(cases, kml_info),
+                                    "<img src='compare_pose_kml/{}_distance.png' width='500' />".format(case_name),
+                                    "<img src='compare_memory/{}_memory.png' width='500' />".format(case_name),
+                                ),))
+        row = row + 1
+    else:
+        logging.warning("error! case {} don't exist in master_result!".format(cases))
 
 
-def generate_report_table(table, cases, branch_case_dir, case_name, output_path):
-    logging.info('draw_posreport_kml(\'{}\', \'{}\', \'{}\')'.format(branch_case_dir, case_name, output_path))
-    draw_posreport_kml(branch_case_dir, case_name, output_path)
+def generate_report_table(table, row, cases, branch_case_dir, case_name, output_path):
+    if os.path.isdir(branch_case_dir):
+        logging.info('draw_posreport_kml(\'{}\', \'{}\', \'{}\')'.format(branch_case_dir, case_name, output_path))
+        draw_posreport_kml(branch_case_dir, case_name, output_path)
 
-    logging.info('draw_offline_data(\'{}\', \'{}\', \'{}\')'.format(branch_case_dir, case_name, output_path))
-    draw_offline_data(branch_case_dir, case_name, output_path)
+        logging.info('draw_offline_data(\'{}\', \'{}\', \'{}\')'.format(branch_case_dir, case_name, output_path))
+        draw_offline_data(branch_case_dir, case_name, output_path)
 
-    table.append_data_rows(((
-                                cases,
-                                "<img src='compare_posreport/{}_prepose.png' width='500' />".format(case_name),
-                                "<img src='compare_offline/{}_offline.png' width='500' />".format(case_name),
-                            ),))
+        table.append_data_rows(((
+                                    cases,
+                                    "<img src='compare_posreport/{}_prepose.png' width='500' />".format(case_name),
+                                    "<img src='compare_offline/{}_offline.png' width='500' />".format(case_name),
+                                ),))
+        row = row + 1
+    else:
+        logging.warning("error! case {} don't exist in master_result!".format(cases))
 
 
 def compare_two_results(branch_result, master_result, output_path='tmp', html_name='analysis.html'):
@@ -139,16 +147,13 @@ def compare_two_results(branch_result, master_result, output_path='tmp', html_na
         for cases in os.listdir(os.path.join(branch_result, threads, areas)):
             branch_case_dir = os.path.join(branch_result, threads, areas, cases)
             master_case_dir = os.path.join(master_result, threads, areas, cases)
-            if os.path.isdir(branch_case_dir) and os.path.isdir(master_case_dir):
-                now = int(round(time.time() * 1000))
-                now = time.strftime('%Y%m%d%H%M%S', time.localtime(now / 1000))
-                case_name = '{}_{}_{}_{}_branch'.format(now, threads, areas, cases)
 
-                generate_compare_table(table, cases, branch_case_dir, master_case_dir, case_name, output_path)
-                # generate_report_table(table, cases, branch_case_dir, case_name, output_path)
-                row = row + 1
-            else:
-                logging.warning("error! case {} don't exist in master_result!".format(cases))
+            now = int(round(time.time() * 1000))
+            now = time.strftime('%Y%m%d%H%M%S', time.localtime(now / 1000))
+            case_name = '{}_{}_{}_{}_branch'.format(now, threads, areas, cases)
+
+            generate_compare_table(table, row, cases, branch_case_dir, master_case_dir, case_name, output_path)
+            # generate_report_table(table, row, cases, branch_case_dir, case_name, output_path)
 
     html_path = os.path.join(output_path, html_name)
     generate_html_file(table, html_path)
