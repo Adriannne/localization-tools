@@ -1,0 +1,122 @@
+{
+   "semantic" : {
+      "0" : {
+         "color" : "255, 245, 238",
+         "name" : "road"
+      },
+      "1" : {
+         "color" : "0, 0, 160",
+         "name" : "sidewalk"
+      },
+      "10" : {
+         "color" : "255, 64, 0",
+         "name" : "trafficLight"
+      },
+      "11" : {
+         "color" : "224, 0, 224",
+         "name" : "sign"
+      },
+      "12" : {
+         "color" : "0, 192, 0",
+         "name" : "vegetation"
+      },
+      "13" : {
+         "color" : "139, 69, 19",
+         "name" : "terrain"
+      },
+      "14" : {
+         "color" : "255, 255, 0",
+         "name" : "sky"
+      },
+      "15" : {
+         "color" : "139, 0, 139",
+         "name" : "car"
+      },
+      "16" : {
+         "color" : "70, 0, 130",
+         "name" : "truck"
+      },
+      "17" : {
+         "color" : "0, 0, 255",
+         "name" : "egoVehicle"
+      },
+      "18" : {
+         "color" : "218, 165, 32",
+         "name" : "movableObstacle"
+      },
+      "19" : {
+         "color" : "255, 0, 0",
+         "name" : "nonePlaceholder"
+      },
+      "2" : {
+         "color" : "64, 255, 255",
+         "name" : "marking",
+         "subSematic" : {
+            "0" : "road_plane",
+            "100663296" : "furniture_object",
+            "16777216" : "lane_boundary_unlabeled",
+            "16842752" : "lane_boundary_road_surface",
+            "16908288" : "lane_boundary_off_road",
+            "16973824" : "lane_boundary_solid_line",
+            "17039360" : "lane_boundary_dashed_line",
+            "17104896" : "lane_boundary_forked_line",
+            "17170432" : "lane_boundary_merged_line",
+            "17235968" : "lane_boundary_road_marking",
+            "17301504" : "lane_boundary_dashed_dashed_dashed_line",
+            "17367040" : "lane_boundary_dashed_solid_line",
+            "17432576" : "lane_boundary_solid_dashed_line",
+            "17498112" : "lane_boundary_dashed_solid_dashed_line",
+            "17563648" : "lane_boundary_double_solid_line",
+            "17629184" : "lane_boundary_double_dashed_line",
+            "17694720" : "lane_boundary_single_solid_line",
+            "33554432" : "surface_object_non_categorized",
+            "33619968" : "surface_object_paint_ped_cross",
+            "33685504" : "surface_object_paint_halt_line",
+            "33751040" : "surface_object_paint_temp_paint",
+            "33816576" : "surface_object_paint_exclusion",
+            "33882112" : "surface_object_paint_arrow",
+            "33947648" : "surface_object_paint_bycicle",
+            "34013184" : "surface_object_paint_bus",
+            "34078720" : "surface_object_paint_hov",
+            "34144256" : "surface_object_speed_bump",
+            "34209792" : "surface_object_man_hole",
+            "50331648" : "logic_point",
+            "67108864" : "lane",
+            "83886080" : "edge_imputed",
+            "83951616" : "edge_pavement_edge",
+            "84017152" : "edge_curb_rail",
+            "84082688" : "edge_guard_rail",
+            "84148224" : "edge_jersey_wall"
+         }
+      },
+      "3" : {
+         "color" : "128, 0, 0",
+         "name" : "building"
+      },
+      "4" : {
+         "color" : "255, 182, 193",
+         "name" : "concreteBarrier"
+      },
+      "5" : {
+         "color" : "64, 64, 128",
+         "name" : "fence"
+      },
+      "6" : {
+         "color" : "173, 255, 47",
+         "name" : "curb"
+      },
+      "7" : {
+         "color" : "0, 128, 128",
+         "name" : "underpass"
+      },
+      "8" : {
+         "color" : "192, 192, 128",
+         "name" : "pole"
+      },
+      "9" : {
+         "color" : "70, 130, 180",
+         "name" : "frame"
+      }
+   },
+   "version" : 262145
+}
